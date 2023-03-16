@@ -4,129 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GIDF.at in Schön</title>
-  <style id="main-styles">
-    :root {
-      --bg-color: #f0f0f0;
-      --text-color: #333;
-      --link-color: #1a73e8;
-      --btn-bg-color: #1a73e8;
-      --btn-bg-color-hover: #1559c1;
-      --input-bg-color: #ffffff;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-    }
-
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    h1 {
-      font-size: 2.5em;
-      text-align: center;
-      color: var(--text-color);
-      margin-bottom: 20px;
-    }
-
-    p {
-      font-size: 1.2em;
-      margin-bottom: 10px;
-    }
-
-    a {
-      color: var(--link-color);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .search-box {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 20px;
-    }
-
-    .search-box form {
-      display: flex;
-      border: 2px solid var(--link-color);
-      border-radius: 5px;
-      overflow: hidden;
-    }
-
-    .search-box input[type="text"] {
-      font-size: 1.2em;
-      padding: 5px;
-      width: 80%;
-      border: none;
-      background-color: var(--input-bg-color);
-      box-sizing: border-box;
-    }
-
-    .search-box input[type="submit"] {
-      font-size: 1.2em;
-      padding: 5px 15px;
-      background-color: var(--btn-bg-color);
-      color: white;
-      border: none;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
-
-    .search-box input[type="submit"]:hover {
-      background-color: var(--btn-bg-color-hover);
-    }
-
-    .dark-mode-toggle {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      font-size: 1.2em;
-      cursor: pointer;
-    }
-
-    body {
-      user-select: none;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-    }
-
-    .social-media-links {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
-    }
-
-    .social-media-links i {
-      font-size: 1.5em;
-      color: var(--link-color);
-      margin: 0 10px;
-      transition: color 0.3s;
-    }
-
-    .social-media-links i:hover {
-      color: var(--btn-bg-color-hover);
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
+  <style id="main-styles"></style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" crossorigin="anonymous">
-
 </head>
 <body>
   <div class="container">
     <h1>GIDF.at</h1>
-    <div class="search-box">
+     <div class="search-box">
       <form action="https://www.google.com/search" method="get" target="_blank">
-        <input type="text" name="q" placeholder="Suche mit Google...">
+        <label for="search-input" class="sr-only"></label>
+        <input type="text" name="q" id="search-input" placeholder="Suche mit Google...">
         <input type="submit" value="Suchen">
       </form>
     </div>
@@ -137,14 +25,14 @@
       Bevor du nun aber in Panik ausbrichst, atme erst einmal tief durch und lies, was folgt:
     </p>
     <p>
-      Wenn du eine Frage hast, bevor du sie stellst, denke bitte darüber nach, ob dir nicht vielleicht eine Suchmaschine, wie zum Beispiel <a href="https://www.google.de/" target="_blank">Google</a>, weiterhelfen könnte.
+      Wenn du eine Frage hast, bevor du sie stellst, denke bitte darüber nach, ob dir nicht vielleicht eine Suchmaschine, wie zum Beispiel <a href="https://www.google.at/" target="_blank">Google</a>, weiterhelfen könnte.
     </p>
     <p>
-      So einfach ist das. Also, bitte denk in Zukunft daran, bevor du jemanden mit Fragen bombardierst, die so leicht zu beantworten sind. Und nun viel Spaß beim <a href="https://www.google.de/" target="_blank">Googeln</a>!
+      So einfach ist das. Also, bitte denk in Zukunft daran, bevor du jemanden mit Fragen bombardierst, die so leicht zu beantworten sind. Und nun viel Spaß beim <a href="https://www.google.at/" target="_blank">Googeln</a>!
     </p>
   </div>
   <div class="dark-mode-toggle">🌓</div>
-  <!-- Social-Media-Links hinzufügen -->
+
   <div class="social-media-links">
     <a href="https://github.com/Mischmaschine" target="_blank" title="GitHub">
       <i class="fab fa-github"></i>
@@ -153,33 +41,7 @@
       <i class="fab fa-discord"></i>
     </a>
   </div>
-  <script>
-    const darkModeToggle = document.querySelector('.dark-mode-toggle');
-    const mainStyles = document.getElementById('main-styles');
 
-    const darkModeStyles = `
-      :root {
-        --bg-color: #333;
-        --text-color: #f0f0f0;
-        --link-color: #1a73e8;
-        --btn-bg-color: #1a73e8;
-        --btn-bg-color-hover: #1559c1;
-        --input-bg-color: #444;
-      }
-    `;
-
-    const isSystemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (isSystemDarkMode) {
-      mainStyles.innerHTML += darkModeStyles;
-    }
-
-    darkModeToggle.addEventListener('click', () => {
-      if (mainStyles.innerHTML.includes(darkModeStyles)) {
-        mainStyles.innerHTML = mainStyles.innerHTML.replace(darkModeStyles, '');
-      } else {
-        mainStyles.innerHTML += darkModeStyles;
-      }
-    });
-  </script>
+  <script src="scripts.js"></script>
 </body>
 </html>
