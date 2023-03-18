@@ -19,7 +19,7 @@
 }
 
 :root {
-  --bg-color: #f0f0f0;
+  --bg-color: #f9f9f9;
   --text-color: #333;
   --link-color: #1a73e8;
   --btn-bg-color: #1a73e8;
@@ -29,7 +29,6 @@
 
 body {
   font-family: Arial, sans-serif;
-  background-color: var(--bg-color);
   color: var(--text-color);
   line-height: 1.6;
   margin: 0;
@@ -83,6 +82,7 @@ a:hover {
   border: 2px solid var(--link-color);
   border-radius: 5px;
   overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .search-box input[type="text"] {
@@ -154,4 +154,13 @@ a:hover {
 
 .social-media-links a:nth-child(2) {
   animation-delay: 0.2s;
+}
+
+.text-box {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
