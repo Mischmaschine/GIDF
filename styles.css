@@ -86,6 +86,7 @@ a:hover {
 }
 
 .search-box input[type="text"] {
+  color: var(--text-color);
   font-size: 1.2em;
   padding: 5px;
   width: 80%;
